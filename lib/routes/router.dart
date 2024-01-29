@@ -1,3 +1,6 @@
+import '/resources/pages/landing_page.dart';
+import '/resources/pages/register_page.dart';
+import '/resources/pages/login_page.dart';
 import '/resources/pages/home_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -10,9 +13,13 @@ import 'package:nylo_framework/nylo_framework.dart';
 |-------------------------------------------------------------------------- */
 
 appRouter() => nyRoutes((router) {
-  router.route(HomePage.path, (context) => HomePage(), initialRoute: true);
-  // Add your routes here
+      router.route(HomePage.path, (context) => HomePage(), initialRoute: false);
+      // Add your routes here
 
-  // router.route(NewPage.path, (context) => NewPage(), transition: PageTransitionType.fade);
-
-});
+      router.route(LoginPage.path, (context) => LoginPage(),
+          initialRoute: false);
+      router.route(RegisterPage.path, (context) => RegisterPage(),
+          initialRoute: false);
+      router.route(LandingPage.path, (context) => LandingPage(),
+          initialRoute: true);
+    });
